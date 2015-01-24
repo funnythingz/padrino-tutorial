@@ -1,0 +1,13 @@
+- @title = @post.title
+
+#show
+  .post
+    .title
+      = @post.title
+    .data
+      | #{time_ago_in_words(@post.created_at || Time.zone.now)} ago
+    .body
+      = simple_format(@post.body)
+p
+  = link_to url_for(:posts, :index)
+    | view all posts
