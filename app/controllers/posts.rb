@@ -19,12 +19,12 @@ PadrinoTutorial::App.controllers :posts do
   #   'Hello world!'
   # end
   
-  get :index do
+  get :index, map: '/' do
     @posts = Post.all.order(created_at: :desc)
     render 'posts/index'
   end
 
-  get :show, with: :id do
+  get :show, with: :id, map: '/post' do
     @post = Post.find_by(id: params[:id])
     render 'posts/show'
   end
