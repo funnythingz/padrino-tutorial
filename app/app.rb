@@ -7,6 +7,14 @@ module PadrinoTutorial
 
     enable :sessions
 
+    get '/' do
+      "Hello world."
+    end
+
+    get :about, map: '/about' do
+      render :about
+    end
+
     ##
     # Caching support.
     #
